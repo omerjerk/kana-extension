@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f3ec">
+  <title>Kana — New Tab Practice</title>
+  <link rel="stylesheet" href="styles.css?v=photo-hero-2">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Kana home">
+        <span class="brand-mark" aria-hidden="true">あ</span>
+        <span class="brand-name">kana<span class="brand-dot">.</span></span>
+      </a>
+      <div class="topbar-note"><span class="live-dot" aria-hidden="true"></span> A little practice, every new tab</div>
+      <div class="header-progress" aria-live="polite">
+        <span class="header-progress-number" id="header-learned">0</span>
+        <span class="header-progress-label">of 46 steady</span>
+      </div>
+    </header>
+
+    <main class="main-layout">
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow"><span class="eyebrow-line"></span> YOUR DAILY PRACTICE</p>
+        <h1 id="page-title">Meet one<br><em>kana</em> at a time.</h1>
+        <p class="intro-copy">A tiny moment of Japanese, tucked into the tab you were opening anyway.</p>
+
+        <div class="progress-block">
+          <div class="progress-meta">
+            <span>Hiragana foundations</span>
+            <span id="progress-count">0 / 46</span>
+          </div>
+          <div class="progress-track" role="progressbar" aria-label="Hiragana learned" aria-valuemin="0" aria-valuemax="46" aria-valuenow="0" id="progress-track">
+            <span id="progress-fill"></span>
+          </div>
+          <div class="progress-foot"><span>あ</span><span>One sound at a time</span><span>ん</span></div>
+        </div>
+
+        <div class="tip-card">
+          <span class="tip-icon" aria-hidden="true">✳</span>
+          <p><strong>Small is memorable.</strong><br>Say the sound out loud before you reveal it. A quick guess helps it stick.</p>
+        </div>
+      </section>
+
+      <section class="lesson-column" aria-label="Hiragana flashcard">
+        <div class="lesson-heading">
+          <div class="lesson-label"><span class="label-dot" aria-hidden="true"></span><span id="card-status">NEW KANA</span></div>
+          <span class="card-index" id="card-index">01 <span>/ 46</span></span>
+        </div>
+
+        <article class="study-card" id="study-card" aria-live="polite">
+          <div class="card-topline">
+            <span class="card-overline" id="card-overline">TODAY'S CHARACTER</span>
+            <span class="card-spark" aria-hidden="true">✳</span>
+          </div>
+
+          <div class="kana-stage">
+            <span class="kana-glyph" id="kana-glyph" lang="ja">あ</span>
+            <span class="kana-watermark" aria-hidden="true">あ</span>
+          </div>
+
+          <div class="answer-area" id="answer-area" hidden>
+            <div class="sound-line">
+              <span class="sound-label">SOUND</span>
+              <span class="romaji" id="romaji" lang="ja">a</span>
+            </div>
+            <div class="mnemonic-block">
+              <span class="sound-label">PHOTO + PHRASE</span>
+              <div class="mnemonic-row">
+                <img class="mnemonic-image" id="mnemonic-image" alt="" width="480" height="280" loading="lazy" decoding="async">
+                <p id="mnemonic"></p>
+              </div>
+            </div>
+            <div class="example-block">
+              <span class="example-word" id="example-word" lang="ja"></span>
+              <span class="example-reading" id="example-reading"></span>
+              <span class="example-meaning" id="example-meaning"></span>
+            </div>
+          </div>
+
+          <div class="card-bottom" id="card-bottom">
+            <p class="recall-prompt" id="recall-prompt">What sound does it make?</p>
+            <button class="button button-reveal" id="reveal-button" type="button">
+              <span>Reveal sound &amp; mnemonic</span><span class="button-arrow" aria-hidden="true">↗</span>
+            </button>
+            <div class="rating-buttons" id="rating-buttons" hidden>
+              <button class="button button-again" id="again-button" type="button">
+                <span>Again</span><span class="button-schedule" id="again-schedule">10 min</span>
+              </button>
+              <button class="button button-known" id="known-button" type="button">
+                <span>Got it</span><span class="button-schedule" id="known-schedule">1 day</span>
+              </button>
+            </div>
+            <p class="keyboard-hint"><kbd>Space</kbd> reveal <span aria-hidden="true">·</span> <kbd>1</kbd> again <span aria-hidden="true">·</span> <kbd>2</kbd> got it</p>
+          </div>
+        </article>
+
+        <div class="footer-note"><span aria-hidden="true">↻</span> Your review cards return when they’re due.</div>
+      </section>
+    </main>
+
+    <footer class="page-footer">
+      <span>ひらがな · HIRAGANA</span>
+      <span id="today-count">0 reviewed today</span>
+      <span>Built for curious minds <span class="footer-heart" aria-hidden="true">♥</span></span>
+    </footer>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
