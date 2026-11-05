@@ -215,7 +215,7 @@ function renderCard() {
   ui.romaji.textContent = currentCard.displaySound || currentCard.sound;
   ui.mnemonic.textContent = currentCard.mnemonic;
   const picture = PICTURE_CUES[currentCard.kana];
-  ui.mnemonicImage.src = `images/${picture.file}`;
+  ui.mnemonicImage.removeAttribute('src');
   ui.mnemonicImage.alt = `Photo: ${picture.alt}`;
   ui.exampleWord.textContent = currentCard.word;
   ui.exampleReading.textContent = currentCard.reading;
@@ -249,6 +249,8 @@ function formatDue(timestamp) {
 function reveal() {
   if (revealed) return;
   revealed = true;
+  const picture = PICTURE_CUES[currentCard.kana];
+  ui.mnemonicImage.src = `images/${picture.file}`;
   ui.answerArea.hidden = false;
   ui.revealButton.hidden = true;
   ui.ratingButtons.hidden = false;
